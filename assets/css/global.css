@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&family=Oswald&family=Secular+One&display=swap');
+
+:root {
+	--col-sage: #BCB88A;
+	--col-offwhite: #E5E7E6;
+	--col-black: #141301;
+
+	--col-blue: #233d4d;
+	--col-orange: #fe7f2d;
+	--col-yellow: #fcca46;
+	--col-lgreen: #a1c181;
+	--col-dgreen: #619b8a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+	scroll-behavior: smooth;
+	font-family: "Lato", sans-serif;
+
+	min-height: 100%;
+	display: grid;
+  grid-template-rows: 1fr auto;
+  
+	background-color: var(--col-blue);
+	color: var(--col-offwhite);
+/*	background-image: url("../images/wallpaper/tokyo.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;*/
+}
+
+a, a:visited { text-decoration: inherit; color: inherit; }
+a:hover { opacity: 0.8; }
+
+ul { list-style-type: none; }
+
+img { object-fit: cover; width: 100%; height: 100%; }
+
+h1, h2, h3, h4, h5, h6 { font-family: "Bebas Neue", sans-serif; }
+
+button {
+  border: 1px solid transparent;
+  border-radius: .5em;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 1em 2em;
+  transition: .3s;
+}
+button:hover { background-color: var(--col-black); color: var(--col-offwhite) }
+
+.tright { text-align: right; }
+.clear:after { content: ""; display: table; clear: both; }
+.divider { background-color: var(--col-blue); padding: 5px; }
+.sticky { position: fixed; top: 0; width: 100%; }
+.sticky + #content { padding-top: 100px }
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700|Roboto:300,400,500,700');
+
+.overlay {
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	z-index: 999;
+}
+.overlay .overlayDoor:before, .overlay .overlayDoor:after {
+	content: "";
+	position: absolute;
+	width: 50%; height: 100%;
+	background-color: var(--col-offwhite);
+	transition: 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+	transition-delay: 0.8s;
+}
+ .overlay .overlayDoor:before { left: 0; }
+ .overlay .overlayDoor:after { right: 0; }
+ .overlay.loaded .overlayDoor:before { left: -50%; }
+ .overlay.loaded .overlayDoor:after { right: -50%; }
+ .overlay.loaded .overlayContent {
+	 opacity: 0;
+	 margin-top: -15px;
+}
+ .overlay .overlayContent {
+	 position: relative;
+	 width: 100%;
+	 height: 100%;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 flex-direction: column;
+	 transition: 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+ .loader {
+	 width: 64px; height: 64px;
+	 border-radius: 50%;
+	 position: relative;
+	 animation: spin 1s linear infinite;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 animation: loader 1s linear infinite;
+
+}
+
+.fullscreen { height: 100vh; }
+
+ #cover {
+	 background: url('../images/wallpaper/tokyo.jpg') center/cover;
+	 background-size: cover;
+	 font-family: 'Bebas Neue';
+}
+ #cover .darken {
+	 background: rgba(0, 0, 0, 0.3);
+	 width: 100%;
+	 height: 100%;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 flex-direction: column;
+}
+ #cover .darken h1 {
+	 font-size: 64px;
+	 color: #fff;
+	 margin: 0 0 20px 0;
+	 text-align: center;
+}
+#cover .darken p {
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 25px;
+	font-size: 28px;
+}
+#cover .darken li { display: inline-block; margin: 10px;}
+#cover .darken a { padding: 20px; }
+#cover .darken a:hover { border-bottom: 1px solid var(--col-offwhite); }
+
+main {
+	margin: 0;
+}
+main nav {
+	z-index: 1;
+	text-align: center;
+	background-color: var(--col-offwhite);
+	color: var(--col-black);
+	padding: 10px;
+	font-family: "Bebas Neue", sans-serif;
+}
+main nav li { display: inline-block; margin: 0 20px; }
+main nav a { display: block; padding: 10px; }
+main nav a:hover { background-color: var(--col-blue); color: var(--col-offwhite) }
+main nav a.active { background-color: var(--col-black); color: var(--col-offwhite) }
+main #content {
+	width: 80%;
+	margin: auto;
+	padding: 40px;
+}
+
+#about {
+	font-size: 28px;
+	text-align: right;
+	padding: 40px;
+	margin: 40px auto;
+}
+
+#podcast {
+	text-align: center;
+}
+
+#podcast p {
+	padding: 20px;
+}
+
+article {
+	margin: 40px;
+}
+article span {
+	color: lightgrey;
+	font-style: italic;
+	line-height: 40px;
+}
+article p {
+	margin-left: 20px;
+}
+
+footer {
+	display: flex;
+	background-color: var(--col-black);
+	padding: 40px;
+}
+footer h1 { margin-bottom: 20px; }
+footer h3 { margin: 20px auto 20px auto; }
+footer .wrapper {
+	width: 60%;
+	margin: auto;
+}
+footer .copyright {
+	width: 50%;
+	float: left;
+}
+footer .socials {
+	width: 50%;
+	float: left;
+	text-align: right;
+}
+footer .socials a { display: block; padding: 10px 0; }

@@ -1,0 +1,52 @@
+#collection {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 200px;
+}
+.tokyo { background-image: url("../images/collections/tokyo.jpg"); }
+.barcelona { background-image: url("../images/collections/barcelona.png"); }
+.band { background-image: url("../images/collections/band.png"); }
+.jasmine { background-image: url("../images/collections/jasmine.jpeg"); }
+
+/* COLLECTIONS SHOWCASE */
+.grid-container {
+  width: 100%;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
+.grid-item {
+	width: 100%; height: auto;
+	text-align: center;
+
+  padding: 5%;
+
+	position: relative;
+}
+.grid-item img { animation: 1.5s fadein; border-radius: 15px; }
+.grid-item img:hover { opacity: 0.8 } /* mimics a link */
+
+.grid-item .overlay {
+  position: absolute;
+  bottom: 10%;
+  width: 90%;
+
+  z-index: 1;
+
+  color: #f1f1f1;
+  text-shadow: var(--col-black) 0 8px 4px;
+  
+  padding: 10px;
+  text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.grid-item > img:hover .grid-item .overlay {
+  display: none;
+}
